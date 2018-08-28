@@ -14,7 +14,9 @@ class BankAccount
     return "Your balance is $#{@balance}."
   end 
   def valid?
-    
+     self.balance==0 or self.status=='closed' ? FALSE : TRUE 
+  end 
+  def
 end
 
 describe "BankAccount" do
@@ -42,7 +44,6 @@ describe "BankAccount" do
       end
     end
   end
-
   describe '#deposit' do
     it "can deposit money into its account" do
       expect(avi.balance).to eq(1000)
@@ -50,13 +51,11 @@ describe "BankAccount" do
       expect(avi.balance).to eq(2000)
     end
   end
-
   describe '#display_balance' do
     it "can display its balance" do
       expect(avi.display_balance).to eq("Your balance is $#{avi.balance}.")
     end
   end
-
   describe '#valid?' do
     it "is valid with an open status and a balance greater than 0" do
       @broke = BankAccount.new("Kat Dennings")
