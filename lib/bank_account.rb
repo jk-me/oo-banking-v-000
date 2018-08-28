@@ -1,10 +1,17 @@
 class BankAccount
-
+  attr_accessor :balance , :status
+  attr_reader :name
+  
+  def initialize(name)
+    @name=name 
+    @balance=1000
+    @status='open'
+  end 
+  
 end
+
 describe "BankAccount" do
-
   let(:avi) { BankAccount.new("Avi") }
-
   describe 'BankAccount' do
     describe "#initialize" do
       it "can initialize a Bank Account" do
