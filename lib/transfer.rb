@@ -13,6 +13,9 @@ class Transfer
     if self.valid?
       self.sender.balance-=@amount
       self.receiver.balance+=@amount
+    else 
+      return "Transaction rejected. Please check your account balance."
+      self.status='rejected'
     end
 end
 
