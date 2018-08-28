@@ -10,8 +10,10 @@ class Transfer
     self.sender.valid? && self.receiver.valid?
   end
   def execute_transaction 
-    self.sender.
-    
+    if self.valid?
+      self.sender.balance-=@amount
+      self.receiver.balance+=@amount
+    end
 end
 
 describe 'Transfer' do
